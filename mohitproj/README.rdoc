@@ -1,0 +1,22 @@
+Install RVM first -> https://rvm.io/
+
+Execute the following commands:
+
+  $ cd mohitproj/
+  $ rvm gemset list (This should point to "mohitproj4.2.4")
+  $ bundle install
+  $ rake db:create
+  $ rake db:migrate
+  $ rake db:seed (This has the seed data for websites in db/seeds.rb)
+  $ rails s (starts rails server on port 3000)
+
+Demo:
+  - Go to localhost:3000
+  - First thing displayed is the sign-in form and link to sign-up below it.
+  - Click on sign-up and enter a valid user email in the form.
+  - User gets an email with a random assigned website (one out of the 3 seeded websites).
+  - It is possible that the same website can get assigned to multiple users since the website is chosen at random from db.
+
+Email sent from:
+  username: signinprojpurdue@gmail.com
+  password: signinprojpurdue1234

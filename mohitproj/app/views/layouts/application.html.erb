@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mohitproj</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if current_user %>
+    <%= render "shared/navbar" %>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <% if flash[:alert] && !current_user %>
+        <span class='flash_error'> <%= flash[:alert] %></span>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <p class="notice"><%= notice %></p>
+    </div>
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
